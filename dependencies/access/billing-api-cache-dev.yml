@@ -1,0 +1,15 @@
+---
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: billing-api-cache-dev
+  annotations:
+    company.fr/env: dev
+spec:
+  type: database-access
+  access: readwrite
+  owner: group:default/tiger
+  dependsOn:
+    - resource:default/billing-cache-dev
+  dependencyOf:
+    - component:default/billing-api
