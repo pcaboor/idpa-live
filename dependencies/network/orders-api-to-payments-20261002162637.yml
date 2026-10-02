@@ -1,0 +1,14 @@
+---
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: orders-api-to-payments-20261002162637
+  annotations:
+    company.fr/env: prod
+spec:
+  type: network-access
+  owner: group:default/tiger
+  dependsOn:
+    - resource:default/payments-api
+  dependencyOf:
+    - component:default/orders-api
